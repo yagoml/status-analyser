@@ -1,0 +1,24 @@
+type StockPrices {
+  actualValue: Float
+  minValue: Float
+  maxValue: Float
+  dividend: Float
+}
+
+type CompanyData {
+  code: String
+  price: StockPrices
+  pl: Float
+  pVp: Float
+  roe: Float
+  roa: Float
+  roic: Float
+  netMargin: Float
+  dbPl: Float
+  evEbit: Float
+}
+
+type Query {
+  companiesData: [CompanyData!]!
+  companyData(id: String): CompanyData
+}
