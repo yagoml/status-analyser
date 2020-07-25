@@ -1,6 +1,6 @@
 import mongoose from '../database'
 
-const CompanyDataSchema = new mongoose.Schema({
+const StockSchema = new mongoose.Schema({
   code: {type: String, unique: true, required: true},
   price: { type: Object },
   pl: { type: Number },
@@ -9,8 +9,12 @@ const CompanyDataSchema = new mongoose.Schema({
   roa: { type: Number },
   roic: { type: Number },
   netMargin: { type: Number },
-  dbPl: { type: Number },
-  evEbit: { type: Number }
+  dlPl: { type: Number },
+  evEbit: { type: Number },
+  cagrRevenue: { type: Number },
+  cagrProfits: { type: Number },
+  dlEbit: { type: Number },
+  dailyLiquidity: { type: Number }
 })
 
-export default mongoose.model('CompanyData', CompanyDataSchema)
+export default mongoose.model('Stock', StockSchema)

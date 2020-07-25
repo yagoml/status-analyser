@@ -1,4 +1,4 @@
-type StockPrices {
+type Prices {
   actualValue: Float
   minValue: Float
   maxValue: Float
@@ -7,7 +7,7 @@ type StockPrices {
 
 type CompanyData {
   code: String
-  price: StockPrices
+  price: Prices
   pl: Float
   pVp: Float
   roe: Float
@@ -16,9 +16,11 @@ type CompanyData {
   netMargin: Float
   dbPl: Float
   evEbit: Float
+  dailyLiquidity: Float
 }
 
 type Query {
-  companiesData: [CompanyData!]!
-  companyData(id: String): CompanyData
+  stocks: [CompanyData!]!
+  stock(id: String): CompanyData
+  goodStocks: [CompanyData!]!
 }
