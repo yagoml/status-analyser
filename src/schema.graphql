@@ -5,7 +5,7 @@ type Prices {
   dividend: Float
 }
 
-type CompanyData {
+type Stock {
   code: String
   price: Prices
   pl: Float
@@ -14,13 +14,16 @@ type CompanyData {
   roa: Float
   roic: Float
   netMargin: Float
-  dbPl: Float
+  dlPl: Float
   evEbit: Float
+  cagrRevenue: Float
+  cagrProfits: Float
+  dlEbit: Float
   dailyLiquidity: Float
 }
 
 type Query {
-  stocks: [CompanyData!]!
-  stock(id: String): CompanyData
-  goodStocks: [CompanyData!]!
+  stocks: [Stock!]!
+  stock(id: String): Stock
+  goodStocks: [Stock!]!
 }
