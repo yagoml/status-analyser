@@ -7,6 +7,7 @@ const StockSchema = new mongoose.Schema({
   pVp: { type: Number },
   roe: { type: Number },
   roa: { type: Number },
+  lpa: { type: Number },
   roic: { type: Number },
   netMargin: { type: Number },
   dlPl: { type: Number },

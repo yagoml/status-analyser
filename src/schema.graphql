@@ -12,6 +12,7 @@ type Stock {
   pVp: Float
   roe: Float
   roa: Float
+  lpa: Float
   roic: Float
   netMargin: Float
   dlPl: Float
