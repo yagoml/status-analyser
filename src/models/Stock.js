@@ -16,7 +16,8 @@ const StockSchema = new mongoose.Schema({
   cagrProfits: { type: Number },
   dlEbit: { type: Number },
   dailyLiquidity: { type: Number },
-  currentLiquidity: { type: Number }
+  currentLiquidity: { type: Number },
+  industry: { type: Object }
 })
 
 export default mongoose.model('Stock', StockSchema)

@@ -5,6 +5,12 @@ type Prices {
   dividend: Float
 }
 
+type Industry {
+  sector: String
+  subsector: String
+  segment: String
+}
+
 type Stock {
   code: String
   price: Prices
@@ -22,6 +28,7 @@ type Stock {
   dlEbit: Float
   dailyLiquidity: Float
   currentLiquidity: Float
+  industry: Industry
 }
 
 type Query {
