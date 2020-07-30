@@ -21,10 +21,15 @@ type Stock {
   cagrProfits: Float
   dlEbit: Float
   dailyLiquidity: Float
+  currentLiquidity: Float
 }
 
 type Query {
   stocks: [Stock!]!
   stock(id: String): Stock
-  goodStocks: [Stock!]!
+  goodIndicators: [Stock!]!
+  highDividends: [Stock!]!
+  highLiquidity: [Stock!]!
+  cheap: [Stock!]!
+  goodAndCheap: [Stock!]!
 }
