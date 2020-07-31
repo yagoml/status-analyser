@@ -26,9 +26,11 @@ export default {
     },
     highDividends: async () => {
       const stocks = await Stock.find()
-      return stocks.filter(data => {
-        const { price, dailyLiquidity } = data
-        return refs.highDividends(price.dividend) && refs.highLiquidity(dailyLiquidity)
+      const filtered = stocks.filter(data => refs.highDividends(data.price.dividend))
+      return filtered.sort((a, b) => {
+        if (a.price.dividend > b.price.dividend) return -1
+        if (a.price.dividend < b.price.dividend) return 1
+        if (a.price.dividend === b.price.dividend) return 0
       })
     },
     highLiquidity: async () => {
