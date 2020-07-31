@@ -43,8 +43,9 @@ export default {
     cheap: async () => {
       const stocks = await Stock.find()
       return stocks.filter(data => {
-        const { price, dailyLiquidity } = data
-        refs.cheap(price) && refs.mediumLiquidity(dailyLiquidity)
+        const {price} = data
+        if (!price.actualValue) return false
+        return refs.veryCheap(price)
       })
     },
     goodAndCheap: async () => {
